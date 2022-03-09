@@ -1,8 +1,8 @@
-const { CHECKOUT_APIKEY, CHECKOUT_URL, MERCHANT_ACCOUNT } = require('./config');
+const { ADYEN_API_KEY, CHECKOUT_URL, ADYEN_MERCHANT } = require('./config');
 
 module.exports = (endpoint, request) => {
     const body = JSON.stringify({
-        merchantAccount: MERCHANT_ACCOUNT,
+        merchantAccount: ADYEN_MERCHANT,
         ...request
     });
 
@@ -13,7 +13,7 @@ module.exports = (endpoint, request) => {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Content-Length': Buffer.byteLength(body, 'utf8'),
-            'X-Api-Key': CHECKOUT_APIKEY
+            'X-Api-Key': ADYEN_API_KEY
         }
     };
 };
