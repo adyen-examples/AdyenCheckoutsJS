@@ -1,5 +1,5 @@
 const { post } = require('request');
-const { MERCHANT_ACCOUNT } = require('../utils/config');
+const { ADYEN_MERCHANT } = require('../utils/config');
 const getPostParameters = require('../utils/getPostParameters');
 const handleCallback = require('../utils/handleCallback');
 
